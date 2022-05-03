@@ -48,7 +48,7 @@ The predictor feature was text data. Consequently, the text had to be passed thr
 
 Following the text transformation, the baseline accuracy for the Random Forest Classifer on the test set was 68%. Hyperparameter tuning was applied to maxDepth and numTrees using a grid search with 3 cross-validation folds. This resulted in an improved accuracy of 70%.
 
-## Data Serving - Creating database in MongoDB and writing data to database table in Spark Session
+## Data Serving - Creating database in MongoDB and writing data to database table from Spark Session
 
 To read the classified tweets from the SparkSession into a MariaDB database, we first had to create the database and define the table schema within the database. The database creation and table schema were defined in the tweets-db.sql file. Once defined, we then had to start the MariaDB server and initialize the table schema. Now that the table exists (with zero records), we could officially write data to the database as tweets came into the Spark Session batch by batch.
 
