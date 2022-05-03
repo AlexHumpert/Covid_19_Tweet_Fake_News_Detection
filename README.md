@@ -17,10 +17,13 @@ The propagation of fake news across social media platforms has become a major co
 
 For this project, a Lambda Architecture suited our needs best, containing a batch layer where we stored our pre-labled Covid-19 training set and a speed (real-time) processing layer to classify tweets on covid-19 in real time. A Spark session was used as the processing engine to build our classifier and classify Covid-19 tweets read from Kafka producer. We then served these classified tweets, along with other relevant features, such as verified, followers_count, friends_count, etc. to a MariaDB database.  We then read the stored tweets from MariaDB back into our Spark Session to conduct exploratory data anlytics.
 
-## Data Source - training set
-The pre-labeled covid-19 training set had already been curated and posted for public use by Github User [Songli Wang](https://github.com/MickeysClubhouse) as separate CSV files. After combining each CSV file we had 8682 records. Each record was a tweet or a news article classified as True (T) or False (F). The predictor was a single column containing the entire text of the tweet or news article.
-
 <img width="622" alt="Screen Shot 2022-05-03 at 11 29 59 AM" src="https://user-images.githubusercontent.com/64847974/166431649-86409eb1-4c68-4e7d-87a1-803c20a874e6.png">
+
+## Data Source - training set
+The pre-labeled covid-19 training set had already been curated and posted for public use by Github User [Songli Wang](https://github.com/MickeysClubhouse) as separate CSV files. After combining each CSV file we had 8682 records. Each record was a tweet or a news article classified as True (T) or False (F). The predictor was a single column containing the entire text of the tweet or news article. 
+
+(The combined csv files are available in this repository).
+
 
 ## Data Processing - NLP pipeline and Random Forest Classifier
 
