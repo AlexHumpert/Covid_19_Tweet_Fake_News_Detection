@@ -19,11 +19,12 @@ For this project, a Lambda Architecture suited our needs best, containing a batc
 
 <img width="622" alt="Screen Shot 2022-05-03 at 11 29 59 AM" src="https://user-images.githubusercontent.com/64847974/166431649-86409eb1-4c68-4e7d-87a1-803c20a874e6.png">
 
-## Data Source - training set
+## Data Source 
+
+  ### Training set
 The pre-labeled covid-19 training set had already been curated and posted for public use by Github User [Songli Wang](https://github.com/MickeysClubhouse) as separate CSV files. After combining each CSV file we had 8682 records. Each record was a tweet or a news article classified as True (T) or False (F). The predictor was a single column containing the entire text of the tweet or news article. 
 
-(The combined csv files are available in this repository).
-
+(The combined csv files are available in this repository - see "combined_csv.csv").
 
 ## Data Processing - NLP pipeline and Random Forest Classifier
 
