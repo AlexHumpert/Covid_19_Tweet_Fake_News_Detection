@@ -44,6 +44,11 @@ From Spark Session we listen to part of the network that is receiving these twee
 
 ## Data Processing - NLP pipeline and Random Forest Classifier
 
+The predictor feature was text data. Consequently, the text had to be passed through a NLP pipeline in order to transform it to be suitable for ingestion by a Random Forest classifier. The pipeline stages were a (1) Tokenizer, (2) Count Vectorizer and (3) Term Frequency-Inverse Document Frequency (TF-IDF). TF-IDF is a statistical measure that evaluates how relevant a word is to a document in a collection of documents - each word is given a numerical score. 
+
+Following the text transformation, the baseline accuracy for the Random Forest Classifer on the test set was 68%. Hyperparameter tuning was applied to maxDepth and numTrees using a grid search with 3 cross-validation folds. This resulted in an improved accuracy of 70%.
+
+## Data Serving - Creating database in MongoDB and writing data in PySpark session
 
 
 ## Insights 
