@@ -28,7 +28,7 @@ The pre-labeled covid-19 training set had already been curated and posted for pu
 
 #### Real-time Tweet Streaming
 
-To ingest twitter data we first create a Kafka producer in Python. This uses a library that queries Twitter's API create very specialized queries, such as reading only tweets in the English language that contain the word "covid-19" case-insesitive. The API will direcly call twitter and stream data into our kafka model. 
+To ingest twitter data we first create a Kafka producer in Python. This uses a library that queries Twitter's API to create very specialized queries, such as reading only tweets in the English language that contain the word "covid-19" case-insesitive. The API will direcly call twitter and stream data into our kafka model. 
 
 From Spark Session we listen to part of the network that is receiving these tweets and save them into a dataframe one batch at a time. Our pre-trained classifier then classifies each batch of tweets as they are read into the Spark Session.
 
