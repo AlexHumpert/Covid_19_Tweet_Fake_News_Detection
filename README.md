@@ -21,10 +21,18 @@ For this project, a Lambda Architecture suited our needs best, containing a batc
 
 ## Data Source 
 
-  ### Training set
-The pre-labeled covid-19 training set had already been curated and posted for public use by Github User [Songli Wang](https://github.com/MickeysClubhouse) as separate CSV files. After combining each CSV file we had 8682 records. Each record was a tweet or a news article classified as True (T) or False (F). The predictor was a single column containing the entire text of the tweet or news article. 
+#### Training set
+The pre-labeled covid-19 training set had already been curated and posted for public use by Github User [Songli Wang](https://github.com/MickeysClubhouse) as separate csv files. After combining each csv file we had 8682 records. Each record was a tweet or a news article classified as True (T) or False (F). The predictor was a single column containing the entire text of the tweet or news article. The csv file was stored in HDFS and read into a SparkSession to train the machine learning model.
 
 (The combined csv files are available in this repository - see "combined_csv.csv").
+
+#### Real-time Tweet Streaming
+
+To ingest twitter data we first create a Kafka producer in Python. This uses a library that queries Twitter's API create very specialized queries, such as reading only tweets in the English language that contain the word "covid-19" case-insesitive. The API will direcly call twitter and stream data into our kafka model. 
+
+From Spark Session we listen to part of the network that is receiving these tweets and save them into a dataframe one batch at a time. Our pre-trained classifier then classifies each batch of tweets as they are read into the Spark Session.
+
+(The twitter producer configured to read only tweets in English containing "covid_19" case-insneitive is in the "twitter-producer.py" file).
 
 ## Data Processing - NLP pipeline and Random Forest Classifier
 
