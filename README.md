@@ -21,7 +21,7 @@ For this project, a Lambda Architecture suited our needs best, containing a batc
 
 <p align="center">
   <img 
-     width="300" 
+     width="500" 
      alt="Screen Shot 2022-05-03 at 11 29 59 AM" 
      src="https://user-images.githubusercontent.com/64847974/166431649-86409eb1-4c68-4e7d-87a1-803c20a874e6.png"
    >
@@ -55,7 +55,7 @@ The following are some of the insights we found after streaming tweets containin
 
 <p align="center">
   <img 
-     width="300" 
+     width="400" 
      alt="Screen Shot 2022-05-03 at 11 27 55 AM" 
      src="https://user-images.githubusercontent.com/64847974/166431385-21ef4d87-5d5c-4a11-9fe9-a338fc8fa75d.png"
   >
