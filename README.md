@@ -5,6 +5,8 @@
 
 **Packages:** pyspark (MLlib, Spark SQL), pandas, numpy, seaborn, wordcloud
 
+This project could not have been completed without the prior work of [Manuel Huperrich](https://github.com/Hupperich-Manuel/Hupperich-Manuel) who, in collaboration with [Professor Raul Marin Perez](https://github.com/raulmarinperez), provided the basic architecture for [real-time streaming of twitter data into a Spark Session using Apache Kafka](https://github.com/raulmarinperez/bsdprof/tree/main/big_data/stream_processing/templates/twitter).
+
 ## Executive Summary 
 
 Term 2 group project for Modern Data Architectures for Big Data 2 class at IE university - part of the Masters in Business Analytics and Big Data program.
