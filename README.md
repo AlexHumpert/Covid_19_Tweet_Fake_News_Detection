@@ -21,8 +21,8 @@ One might ask, "if this is such an expensive problem, why not do away with conte
 
 The value of a robust Covid-19 Tweet Fake News Detector serves 
   1. Twitter's bottom line
-  2. public health
-  3. countries' strategies to return to a normal state fo affairs.
+  2. Public health
+  3. Countries' strategies to return to a normal state fo affairs
 
 ## Data Architecture
 
