@@ -11,9 +11,15 @@ This project could not have been completed without the prior work of [Manuel Hup
 
 Term 2 group project for Modern Data Architectures for Big Data 2 class at IE university - part of the Masters in Business Analytics and Big Data program.
 
-We live in a world where information is constantly consumed digitally. Taking the US as an example, based on a report by [Pew Research Center conducted in 2021](https://www.pewresearch.org/internet/2021/04/07/social-media-use-in-2021/), about half the US adult population gets news on social media. Regarding Twitter specifically, 55% of Twitter users regularly get news from the platform. 
+The bulk of content moderation by Twitter is done by human moderators. According to CNCB, this is a [billion dollar solution](https://www.cnbc.com/2021/02/27/content-moderation-on-social-media.html) for social media platforms like Twitter, Facebook and Youtube. Replacing human moderators with automated processes would therefore present significant cost savings for Twitter. 
 
-The propagation of fake news across social media platforms has become a major concern to governments and health organizations across the world. This has become obviously problematic since the very start of the Covid-19 pandemic, with misinformation being spread about the seriousness of the disease, the efficacy of mask wearing and innacurate information ranging from treatments to cures to vaccinations. This is a reason why the World Health Organization (WHO) has termed this the "Infodemic". Being able to identify accurate and inaccurate information is particularly critical for this subject - identifying whether or not a tweet on covid-19 is true or fake news.
+One might ask, "if this is such an expensive problem, why not do away with content moderation all together?" There are two issues with this: 
+
+1. The reality is, content shared on social media has real-world implications. This has become evident since the start of the Covid-19 pandemic, with online misinformation about the seriousness of the virus and innacurate information ranging from treatments to  vaccinations being linked to ["early Covid-19 vaccination hesitancy and refusal"](https://www.nature.com/articles/s41598-022-10070-w). This is a reason why the World Health [Organization (WHO) has termed this the "Infodemic"](https://onu.delegfrance.org/IMG/pdf/cross-regional_statement_on_infodemic_final_with_all_endorsements.pdf). Being able to accurately flag misleading information on Covid-19 is therefore vital for public health and countries' strategies to return to a normal state fo affairs.
+
+2. A weak content moderation strategy is a death sentence. Look at Parler, offering an alternative social media platform with minimal content moderation, was [dropped by Apple, Google app stores and AWS' cloud hosting services] for not abiding with their community guidelines (https://edition.cnn.com/2021/01/09/tech/parler-suspended-apple-app-store/index.html).
+
+The value of a robust Covid-19 Tweet Fake News Detector serves (1) Twitter's bottom line, (2) public health, and (3) countries' strategies to return to a normal state fo affairs.
 
 ## Data Architecture
 
