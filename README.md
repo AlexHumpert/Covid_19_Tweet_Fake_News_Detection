@@ -13,16 +13,16 @@ Term 2 group project for Modern Data Architectures for Big Data 2 class at IE un
 
 ### Business Value
 
-The bulk of content moderation by Twitter is done by human moderators. According to CNCB, this is a [billion dollar solution](https://www.cnbc.com/2021/02/27/content-moderation-on-social-media.html) for social media platforms like Twitter, Facebook and Youtube. Replacing human moderators with automated processes would therefore present significant cost savings for Twitter. 
+The bulk of content moderation by Twitter is done by human moderators. According to CNBC, this is a [billion dollar solution](https://www.cnbc.com/2021/02/27/content-moderation-on-social-media.html) for social media platforms like Twitter, Facebook and Youtube. Replacing human moderators with automated processes would therefore present significant cost savings for Twitter. 
 
 One might ask, "if this is such an expensive problem, why not do away with content moderation all together?" There are two issues with this: 
 
 1. The reality is, content shared on social media has real-world implications. This has become evident since the start of the Covid-19 pandemic, with online misinformation about the seriousness of the virus and innacurate information ranging from treatments to  vaccinations being linked to ["early Covid-19 vaccination hesitancy and refusal"](https://www.nature.com/articles/s41598-022-10070-w). This is a reason why the [World Health Organization (WHO) has termed this the "Infodemic"](https://onu.delegfrance.org/IMG/pdf/cross-regional_statement_on_infodemic_final_with_all_endorsements.pdf). Being able to accurately flag misleading information on Covid-19 is therefore vital for public health and countries' strategies to return to a normal state fo affairs.
 
-2. A weak content moderation strategy is a death sentence. Look at Parler, an alternative social media platform offering users an experience with minimal content moderation, was [dropped by Apple, Google app stores and AWS' cloud hosting services](https://edition.cnn.com/2021/01/09/tech/parler-suspended-apple-app-store/index.html) for not abiding with their community guidelines.
+2. A weak content moderation strategy is a death sentence. Look at Parler, an alternative social media platform offering users an experience with minimal content moderation. It was [dropped by Apple, Google app stores and AWS' cloud hosting services](https://edition.cnn.com/2021/01/09/tech/parler-suspended-apple-app-store/index.html) for not abiding with their community guidelines.
 
-The value of a robust Covid-19 Tweet Fake News Detector servers multiple interests: 
-  1. Twitter's bottom line
+The value of a robust Covid-19 Tweet Fake News Detector therefore serves multiple stakeholders: 
+  1. Twitter's bottom line (cost-savings)
   2. Public health
   3. Countries' strategies to return to a normal state fo affairs
 
@@ -49,11 +49,11 @@ The pre-labeled covid-19 training set had already been curated and posted for pu
 
 #### Real-time Tweet Streaming
 
-To ingest twitter data we first create a Kafka producer in Python. This uses a library that queries Twitter's API to create very specialized queries, such as reading only tweets in the English language that contain the word "covid-19" case-insesitive. The API will direcly call twitter and stream data into our kafka model. 
+To ingest twitter data we first created a Kafka producer in Python. This uses a library that queries Twitter's API to create very specialized queries, such as reading only tweets in the English language that contain the word "covid-19" (case-insesitive). The API directly calls twitter and streams data into our kafka model. 
 
-From Spark Session we listen to part of the network that is receiving these tweets and save them into a dataframe one batch at a time. Our pre-trained classifier then classifies each batch of tweets as they are read into the Spark Session.
+From the Spark Session we listened to part of the network that was receiving those tweets and saved them into a dataframe one batch at a time. Our pre-trained classifier then classified each batch of tweets as they were read into the Spark Session.
 
-(The twitter producer configured to read only tweets in English containing "covid_19" case-insneitive is in the "twitter-producer.py" file).
+(The twitter producer is currently configured to read only tweets in English containing "covid_19" case-insneitive is in the "twitter-producer.py" file).
 
 ## Data Processing - NLP pipeline and Random Forest Classifier
 
@@ -69,7 +69,7 @@ To read the classified tweets from the SparkSession into a MariaDB database, we 
 
 ## Insights 
 
-Although we could write sql queries directly in the MariaDB, we instead read the stored tweets from MariaDB back into the Spark Session as a dataframe and used seaborn to make vizualizations of the data. The following are some of the insights we found after streaming english language tweets containing "covid-19" (case-insensitive) for a window of 8 minutes: 
+Although we could write sql queries directly in MariaDB, we instead read the stored tweets from MariaDB back into the Spark Session as a dataframe and used seaborn to make vizualizations of the data. The following are some of the insights we found after streaming english language tweets containing "covid-19" for a window of 8 minutes: 
 * 4519 tweets ingested in real time - 99.5% (4499) classified as fake and 0.5% (17) classified as true.
 * On average accounts linked to fake-news tweets had vastly more followers and friends. This suggests 
 
